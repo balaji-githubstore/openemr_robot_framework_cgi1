@@ -1,8 +1,10 @@
 *** Settings ***
 Documentation      This suite file handles test cases related to valid login
 ...     which is connect with requirement 5.3
-
+...     Test template concepts with excel
 Resource    ../Resource/Base/common_functionality.resource
+
+Library     DataDriver      file=../test_data/open_emr_data.xlsx    sheet_name=verifyvalidcredential
 
 Test Setup      Launch Browser
 Test Teardown       End Browser
@@ -10,8 +12,7 @@ Test Teardown       End Browser
 Test Template   Verify Valid Credential Template
 
 *** Test Cases ***
-TC1     admin       pass        English (Indian)        OpenEMR
-TC2     accountant       accountant        English (Indian)        OpenEMR
+TC1
 
 *** Keywords ***
 Verify Valid Credential Template
