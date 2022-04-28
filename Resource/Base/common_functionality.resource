@@ -8,9 +8,12 @@ Library     SeleniumLibrary
 Launch Browser
     Open Browser    browser=chrome      executable_path=D:${/}Software${/}chromedriver.exe
     Maximize Browser Window
-    Set Selenium Implicit Wait    30s
+    Set Selenium Implicit Wait    0s
     Go To    url=http://demo.openemr.io/b/openemr
 
-End Browser
+End Browser With Screenshot
     Capture Page Screenshot
+    Close Browser
+
+End Browser
     Close Browser
