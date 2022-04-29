@@ -3,6 +3,7 @@ Documentation      This suite file handles test cases related to invalid login
 ...     which is connect with requirement 5.3
 ...     Test template concepts
 Resource    ../Resource/Base/common_functionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
 
 Test Setup      Launch Browser
 Test Teardown       End Browser
@@ -16,9 +17,9 @@ TC1     admin123       pass        English (Indian)            Invalid username 
 *** Keywords ***
 Verify Invalid Credential Template
     [Arguments]     ${username}     ${password}     ${language}     ${expected_error}
-    Run Keyword And Ignore Error    Click Element    xpath=//*[contains(text(),'Thanks')]
-    Input Text    id=authUser    ${username}
-    Input Password    css=#clearPass     ${password}
-    Select From List By Label    xpath=//select[@name='languageChoice']       ${language}
-    Click Element    css=[type=submit]
-    Element Text Should Be    xpath=//div[contains(text(),'Invalid')]     ${expected_error}
+    Run Keyword And Ignore Error    Click No Thanks
+    Enter Username    ${username}
+    Enter Password    ${password}
+    Select Language By Label    ${language}
+    Click Login
+    Validate Invalid Error Message      expected_error=${expected_error}
