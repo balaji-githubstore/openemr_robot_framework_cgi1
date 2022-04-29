@@ -1,0 +1,28 @@
+1651144462818	geckodriver	INFO	Listening on 127.0.0.1:53602
+1651144465846	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53603" "-no-remote" "-profile" "C:\\Users\\Balaji\\AppData\\Local\\Temp\\rust_mozprofilenzEDA1"
+1651144466689	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Balaji\\AppData\\Local\\Temp\\rust_mozprofilenzEDA1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53603/devtools/browser/6d28de2f-38fb-468b-9db7-0a17a318506d
+1651144472230	Marionette	INFO	Listening on port 53608
+1651144472754	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://demo.openemr.io"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1651144478238	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651144478830	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1651144479836	Marionette	INFO	Stopped listening on port 53608
+!!! error running onStopped callback: TypeError: callback is not a function
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+console.error: PushService: 
+  stateChangeProcessEnqueue: Error transitioning state
+  Message: Error: Data is not ready.
+  Stack:
+    get data@resource://gre/modules/JSONFile.jsm:186:13
+getListeners@resource://gre/modules/PushBroadcastService.jsm:66:5
+observe@resource://gre/modules/AsyncShutdown.jsm:575:16
+

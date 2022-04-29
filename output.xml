@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.2 on win32)" generated="20220429 15:38:19.220" rpa="false" schemaversion="3">
+<suite id="s1" name="Verify Invalid Credential Tests" source="D:\Mine\Company\CGI2\openemr_framework\LoginSuite\verify_invalid_credential_tests.robot">
+<test id="s1-t1" name="TC1" line="14">
+<kw name="Launch Browser" library="common_functionality" type="SETUP">
+<if>
+<branch type="IF" condition="'${BROWSER}' == 'ff'">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=ff</arg>
+<arg>executable_path=${EXECDIR}${/}driver${/}geckodriver.exe</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20220429 15:38:19.565" endtime="20220429 15:38:19.565"/>
+</kw>
+<status status="NOT RUN" starttime="20220429 15:38:19.565" endtime="20220429 15:38:19.565"/>
+</branch>
+<branch type="ELSE IF" condition="'${BROWSER}' == 'edge'">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=edge</arg>
+<arg>executable_path=${EXECDIR}${/}driver${/}msedgedriver.exe</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20220429 15:38:19.565" endtime="20220429 15:38:19.565"/>
+</kw>
+<status status="NOT RUN" starttime="20220429 15:38:19.565" endtime="20220429 15:38:19.565"/>
+</branch>
+<branch type="ELSE">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220429 15:38:19.567" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220429 15:38:19.566" endtime="20220429 15:38:25.718"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:19.566" endtime="20220429 15:38:25.718"/>
+</branch>
+<status status="PASS" starttime="20220429 15:38:19.565" endtime="20220429 15:38:25.718"/>
+</if>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220429 15:38:25.718" endtime="20220429 15:38:25.890"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220429 15:38:25.891" endtime="20220429 15:38:25.893"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}${/}screenshot</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20220429 15:38:25.894" endtime="20220429 15:38:25.897"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=http://demo.openemr.io/b/openemr</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220429 15:38:25.898" level="INFO">Opening url 'http://demo.openemr.io/b/openemr'</msg>
+<status status="PASS" starttime="20220429 15:38:25.897" endtime="20220429 15:38:29.207"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:19.564" endtime="20220429 15:38:29.207"/>
+</kw>
+<kw name="Verify Invalid Credential Template">
+<arg>admin123</arg>
+<arg>pass</arg>
+<arg>English (Indian)</arg>
+<arg>Invalid username or password</arg>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click No Thanks</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click No Thanks" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${NOTHANKS_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 15:38:29.216" level="INFO">Clicking element 'xpath=//*[contains(text(),'Thanks')]'.</msg>
+<msg timestamp="20220429 15:38:39.689" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-14.png"&gt;&lt;img src="screenshot/selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220429 15:38:39.690" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=100.0.4896.127)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00377413+2389011]
+	Ordinal0 [0x00309F61+1941345]
+	Ordinal0 [0x001FC520+836896]
+	Ordinal0 [0x0022A1F3+1024499]
+	Ordinal0 [0x0021FF93+982931]
+	Ordinal0 [0x0024414C+1130828]
+	Ordinal0 [0x0021F974+981364]
+	Ordinal0 [0x00244364+1131364]
+	Ordinal0 [0x00254302+1196802]
+	Ordinal0 [0x00243F66+1130342]
+	Ordinal0 [0x0021E546+976198]
+	Ordinal0 [0x0021F456+980054]
+	GetHandleVerifier [0x00529632+1727522]
+	GetHandleVerifier [0x005DBA4D+2457661]
+	GetHandleVerifier [0x0040EB81+569713]
+	GetHandleVerifier [0x0040DD76+566118]
+	Ordinal0 [0x00310B2B+1968939]
+	Ordinal0 [0x00315988+1989000]
+	Ordinal0 [0x00315A75+1989237]
+	Ordinal0 [0x0031ECB1+2026673]
+	BaseThreadInitThunk [0x76576359+25]
+	RtlGetAppContainerNamedObjectPath [0x77008944+228]
+	RtlGetAppContainerNamedObjectPath [0x77008914+180]
+</msg>
+<status status="FAIL" starttime="20220429 15:38:29.215" endtime="20220429 15:38:39.742"/>
+</kw>
+<status status="FAIL" starttime="20220429 15:38:29.215" endtime="20220429 15:38:39.744"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:29.214" endtime="20220429 15:38:39.744"/>
+</kw>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_LOCATOR}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 15:38:39.746" level="INFO">Typing text 'admin123' into text field 'id=authUser'.</msg>
+<status status="PASS" starttime="20220429 15:38:39.745" endtime="20220429 15:38:40.029"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:39.744" endtime="20220429 15:38:40.029"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arg>${password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_LOCATOR}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220429 15:38:40.030" level="INFO">Typing password into text field 'id=clearPass'.</msg>
+<msg timestamp="20220429 15:38:40.079" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220429 15:38:40.291" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220429 15:38:40.030" endtime="20220429 15:38:40.292"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:40.029" endtime="20220429 15:38:40.292"/>
+</kw>
+<kw name="Select Language By Label" library="LoginPage">
+<arg>${language}</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${LANGUAGE_LOCATOR}</arg>
+<arg>${language_label}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220429 15:38:40.293" level="INFO">Selecting options from selection list 'xpath=//select[@name='languageChoice']' by label English (Indian).</msg>
+<status status="PASS" starttime="20220429 15:38:40.292" endtime="20220429 15:38:40.411"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:40.292" endtime="20220429 15:38:40.411"/>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220429 15:38:40.412" level="INFO">Clicking element 'css=[type=submit]'.</msg>
+<status status="PASS" starttime="20220429 15:38:40.411" endtime="20220429 15:38:44.152"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:40.411" endtime="20220429 15:38:44.153"/>
+</kw>
+<kw name="Validate Invalid Error Message" library="LoginPage">
+<arg>expected_error=${expected_error}</arg>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ERROR_LOCATOR}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220429 15:38:44.155" level="INFO">Verifying element 'xpath=//div[contains(text(),'Invalid')]' contains exact text 'Invalid username or password'.</msg>
+<status status="PASS" starttime="20220429 15:38:44.154" endtime="20220429 15:38:44.240"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:44.153" endtime="20220429 15:38:44.240"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:29.213" endtime="20220429 15:38:44.240"/>
+</kw>
+<kw name="End Browser" library="common_functionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220429 15:38:44.242" endtime="20220429 15:38:46.755"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:44.241" endtime="20220429 15:38:46.756"/>
+</kw>
+<status status="PASS" starttime="20220429 15:38:19.561" endtime="20220429 15:38:46.766"/>
+</test>
+<doc>This suite file handles test cases related to invalid login
+which is connect with requirement 5.3
+Test template concepts</doc>
+<status status="PASS" starttime="20220429 15:38:19.222" endtime="20220429 15:38:46.770"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Verify Invalid Credential Tests">Verify Invalid Credential Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
